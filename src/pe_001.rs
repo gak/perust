@@ -3,31 +3,6 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 **/
-struct ThreeOrFive {
-    current: u64,
-}
-
-impl ThreeOrFive {
-    fn new() -> Self {
-        return ThreeOrFive {
-            current: 0,
-        };
-    }
-}
-
-impl Iterator for ThreeOrFive {
-    type Item = u64;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        loop {
-            self.current += 1;
-            if self.current % 3 == 0 || self.current % 5 == 0 {
-                return Some(self.current);
-            }
-        }
-    }
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -51,3 +26,29 @@ mod tests {
         assert_eq!(ThreeOrFive::new().take_while(|i| *i < 1000).sum::<u64>(), 233168);
     }
 }
+
+pub struct ThreeOrFive {
+    current: u64,
+}
+
+impl ThreeOrFive {
+    pub fn new() -> Self {
+        return ThreeOrFive {
+            current: 0,
+        };
+    }
+}
+
+impl Iterator for ThreeOrFive {
+    type Item = u64;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        loop {
+            self.current += 1;
+            if self.current % 3 == 0 || self.current % 5 == 0 {
+                return Some(self.current);
+            }
+        }
+    }
+}
+

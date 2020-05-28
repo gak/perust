@@ -9,11 +9,11 @@ mod tests {
 
     #[test]
     fn test() {
-        // assert_eq!(divider(1..=10), 2520);
-        // assert_eq!(divider(1..=20), 9999);
+        assert_eq!(divider(10), 2520);
+        assert_eq!(divider(20), 9999);
     }
 }
 
-fn divider(range: ()) {
-    todo!();
+pub fn divider(max: u32) -> u32 {
+    todo!()
 }

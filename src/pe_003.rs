@@ -6,6 +6,20 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 
 What is the largest prime factor of the number 600851475143 ?
 **/
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn small_prime() {
+        assert_eq!(factor(13195), vec![5, 7, 13, 29])
+    }
+
+    #[test]
+    fn large_prime() {
+        assert_eq!(*factor(600_851_475_143).last().unwrap(), 6857 as u64)
+    }
+}
 
 #[allow(dead_code)]
 fn factor_attempt_1(p: u64) -> Vec<u64> {
@@ -30,7 +44,7 @@ fn factor_attempt_1(p: u64) -> Vec<u64> {
 }
 
 // I looked up the solution since the above would take many minutes to solve.
-fn factor(mut n: u64) -> Vec<u64> {
+pub fn factor(mut n: u64) -> Vec<u64> {
     let mut v: Vec<u64> = vec![];
     loop {
         let p = smallest(n);
@@ -53,16 +67,3 @@ fn smallest(n: u64) -> u64 {
 }
 
 
-mod tests {
-    use super::*;
-
-    #[test]
-    fn small_prime() {
-        assert_eq!(factor(13195), vec![5, 7, 13, 29])
-    }
-
-    #[test]
-    fn large_prime() {
-        assert_eq!(*factor(600_851_475_143).last().unwrap(), 6857 as u64)
-    }
-}

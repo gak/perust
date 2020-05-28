@@ -3,6 +3,7 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 **/
+#[cfg(test)]
 mod tests {
     use super::*;
 
@@ -34,7 +35,7 @@ mod tests {
 /**
 This attempt will iterate over the factors, collect the palindromes and get the highest.
  */
-fn palin(digits: u32) -> Option<u32> {
+pub fn palin(digits: u32) -> Option<u32> {
     let start = min(digits);
     let end = max(digits);
     let mut values = vec![];
