@@ -5,3 +5,4 @@ pub mod pe_004;
 pub mod pe_005;
 pub mod pe_006;
 pub mod pe_007;
+pub mod pe_008;
