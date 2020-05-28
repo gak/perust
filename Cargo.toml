@@ -1,5 +1,5 @@
 [package]
-name = "projecteuler"
+name = "perust"
 version = "0.1.0"
 authors = ["gak"]
 edition = "2018"
