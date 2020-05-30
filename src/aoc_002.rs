@@ -93,7 +93,7 @@ mod tests {
 
     #[test]
     fn part_one() {
-        let mut data: Vec<i32> = include_str!("pe_002_input.txt")
+        let mut data: Vec<i32> = include_str!("aoc_002_input.txt")
             .trim()
             .split(",")
             .map(|s| s.parse::<i32>().unwrap())
@@ -107,7 +107,7 @@ mod tests {
 
     #[test]
     fn part_two() {
-        let data: Vec<i32> = include_str!("pe_002_input.txt")
+        let data: Vec<i32> = include_str!("aoc_002_input.txt")
             .trim()
             .split(",")
             .map(|s| s.parse::<i32>().unwrap())
@@ -117,7 +117,7 @@ mod tests {
     }
 }
 
-struct Program(Vec<i32>);
+pub struct Program(Vec<i32>);
 
 impl Program {
     fn val(self: &Self, ptr: i32) -> i32 {
@@ -133,7 +133,7 @@ impl Program {
     }
 }
 
-fn run(data: Vec<i32>) -> Vec<i32> {
+pub fn run(data: Vec<i32>) -> Vec<i32> {
     let mut i: i32 = 0;
     let mut p = Program(data);
     loop {
@@ -147,7 +147,7 @@ fn run(data: Vec<i32>) -> Vec<i32> {
     }
 }
 
-fn which_output(data: Vec<i32>, expected_output: i32) -> i32 {
+pub fn which_output(data: Vec<i32>, expected_output: i32) -> i32 {
     for noun in 0..=99 {
         for verb in 0..=99 {
             let mut clean_data = data.clone();

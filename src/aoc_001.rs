@@ -74,7 +74,7 @@ mod tests {
     }
 
     fn get_modules() -> impl Iterator<Item=i32> {
-        include_str!("pe_001_input.txt")
+        include_str!("aoc_001_input.txt")
             .trim()
             .split_ascii_whitespace()
             .map(|s| s.parse::<i32>().unwrap())
