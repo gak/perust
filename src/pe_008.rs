@@ -1,5 +1,3 @@
-use std::iter::Sum;
-
 /**
 The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 
@@ -67,7 +65,7 @@ mod tests {
     }
 }
 
-fn adjacent(s: &str, count: usize) -> u64 {
+pub fn adjacent(s: &str, count: usize) -> u64 {
     let s = fix(s);
     let mut idx: usize = 0;
     let digits: Vec<u64> = s.as_bytes().iter().cloned().map(|byte| (byte - 48) as u64).collect();
@@ -83,8 +81,6 @@ fn adjacent(s: &str, count: usize) -> u64 {
         let v = slice.iter().cloned().fold(1, |total, b| total * b );
         if v > max {
             max = v;
-            eprintln!("max = {:?}", max);
-            eprintln!("slice = {:?}", slice);
         }
 
         idx += 1;

@@ -14,7 +14,7 @@ mod tests {
     }
 }
 
-fn get_prime(c: u32) -> u32 {
+pub fn get_prime(c: u32) -> u32 {
     let mut primes = vec![2, 3, 5];
     let mut v = 5;
 

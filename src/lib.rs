@@ -6,3 +6,6 @@ pub mod pe_005;
 pub mod pe_006;
 pub mod pe_007;
 pub mod pe_008;
+
+pub mod aoc_001;
+pub mod aoc_002;
