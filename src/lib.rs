@@ -9,3 +9,4 @@ pub mod pe_008;
 
 pub mod aoc_001;
 pub mod aoc_002;
+pub mod aoc_003;
